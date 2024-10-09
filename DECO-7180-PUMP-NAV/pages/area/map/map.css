@@ -1,0 +1,109 @@
+/* Ensuring the body and HTML fill the entire screen and are structured properly */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+/* Hero image covering the full view height */
+#hero-image {
+    background-image: url("../../assets/images/gas-station.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* Header styles for fixed positioning at the top */
+header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; /* Ensures the header stays on top */
+}
+
+/* Flexbox for navbar layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Removing list styles and adding spacing for navbar items */
+.navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-link {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-circular, .btn-no-back {
+    border: 2px solid white;
+    background-color: transparent; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-no-back {
+    background-color: gold; 
+    color: black; 
+    border-radius: 20px; 
+    padding: 8px 20px;
+    font-weight: bold;
+    border: 2px solid black; 
+}
+
+
+/* Styling for the dropdown selector */
+select {
+    width: 20%; /* Adjusted width for better control */
+    margin: 1rem; /* Margin for spacing from map edges */
+    position: absolute; /* Absolute positioning */
+    top: 100px; /* Position below header */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust horizontal centering */
+    z-index: 1000; /* Ensure dropdown is above the map */
+    height: 50px;
+    background-color: rgb(232, 229, 229);
+}
+.back-button {
+    width: 10%; /* Adjusted width for better control */
+    margin: 1rem; /* Margin for spacing from map edges */
+    position: absolute; /* Absolute positioning */
+    top: 100px; /* Position below header */
+    left: 10%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust horizontal centering */
+    z-index: 1000; /* Ensure dropdown is above the map */
+    height: 50px;
+    background-color: rgb(200, 198, 198);
+}
+/* Container holding the map should not overlap with header */
+.map-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px; /* Space for header */
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    width: 100%; /* Full container width */
+    height: 80vh; /* Adjusted height */
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.5) 0 5px 10px;
+}
